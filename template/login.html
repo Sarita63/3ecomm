@@ -1,0 +1,54 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <!---->
+ <!--banner-->
+<div class="banner-top">
+	<div class="container">
+		<h3 >Login</h3>
+		<h4><a href="index.html">Home</a><label>/</label>Login</h4>
+		<div class="clearfix"> </div>
+	</div>
+</div>
+<!--login-->
+
+	<div class="login">
+	
+		<div class="main-agileits">
+				<div class="form-w3agile">
+					<h3>Login</h3>
+					<form  method="POST">
+						{% csrf_token %}
+						{% for i in messages %}
+						<h4><font color = "red"><center>
+							{{i}}</center></font></h4>
+						{% endfor %}
+						<div class="key">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+							<input  type="text" value="username" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'username';}" required="">
+							<div class="clearfix"></div>
+						</div>
+						<div class="key">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+							<input  type="password" value="password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}" required="">
+							<div class="clearfix"></div>
+						</div>
+						<input type="submit" value="Login">
+					</form>
+				</div>
+				<div class="forg">
+					<a href="#" class="forg-left">Forgot Password</a>
+					<a href="register.html" class="forg-right">Register</a>
+				<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+
+{% endblock %}

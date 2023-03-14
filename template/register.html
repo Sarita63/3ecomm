@@ -1,0 +1,54 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <!---->
+
+     <!--banner-->
+<div class="banner-top">
+	<div class="container">
+		<h3 >Register</h3>
+		<h4><a href="index.html">Home</a><label>/</label>Register</h4>
+		<div class="clearfix"> </div>
+	</div>
+</div>
+
+<!--login-->
+
+	<div class="login">
+		<div class="main-agileits">
+				<div class="form-w3agile form1">
+					<h3>Register</h3>
+					<form method="POST">
+						{% csrf_token %}
+						{% for i in messages %}
+						<h4><font color = "red"><center>
+							{{i}}</center></font></h4>
+						{% endfor %}
+						<div class="key">
+							<i class="fa fa-user" aria-hidden="true"></i>
+							<input  type="text" value="username" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'username';}" required="">
+							<div class="clearfix"></div>
+						</div>
+						<div class="key">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+							<input  type="text" value="email" name="email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'email';}" required="">
+							<div class="clearfix"></div>
+						</div>
+						<div class="key">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+							<input  type="password" value="password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}" required="">
+							<div class="clearfix"></div>
+						</div>
+						<div class="key">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+							<input  type="password" value="cpassword" name="cpassword" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'cpassword';}" required="">
+							<div class="clearfix"></div>
+						</div>
+						<input type="submit" value="Submit">
+					</form>
+				</div>
+				
+			</div>
+		</div>
+{% endblock %}
